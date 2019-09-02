@@ -7,3 +7,6 @@ The project requires four functional areas to be finished. These areas are:
 - Contact details containing ContactID, FirstName, LastName, CompanyName, MobilePhone
 - Appointment info containing AppointmentID, EventName, Location, EventDate, StartTime, EndTime
 - Shopping List info containing ShoppingItemID, ShopName, NameOfItem, ShoppingDate, PriceQuoted
+
+
+Jason forked to his remote repo on 2/09/2019
