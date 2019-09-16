@@ -25,7 +25,19 @@
                                Text="DashBoard" />
                 </StackPanel>
             </Controls:HamburgerButtonInfo>
-            
+
+            <!--  PersonInfo button  -->
+            <Controls:HamburgerButtonInfo ClearHistory="True" PageType="views:PersonalInfoPage" 
+                                          AutomationProperties.Name="Jerry"
+                                          >
+                <StackPanel Orientation="Horizontal">
+                    <SymbolIcon Width="48" Height="48"
+                		Symbol="People" />
+                    <TextBlock Margin="12,0,0,0" VerticalAlignment="Center"
+                               Text="Accounts" />
+                </StackPanel>
+            </Controls:HamburgerButtonInfo>
+
             <!--  Transaction List button  -->
             <Controls:HamburgerButtonInfo ClearHistory="True" PageType="views:TransactionListPage" 
                                           AutomationProperties.Name="Jerry"
@@ -85,7 +97,6 @@
                                Text="Accounts" />
                 </StackPanel>
             </Controls:HamburgerButtonInfo>
-
 
             <!--  Wish List button  -->
             <Controls:HamburgerButtonInfo ClearHistory="True" PageType="views:WishListPage" 

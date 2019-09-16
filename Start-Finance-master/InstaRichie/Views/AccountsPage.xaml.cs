@@ -63,6 +63,7 @@ namespace StartFinance.Views
             var query = conn.Table<Accounts>();
             TransactionList.ItemsSource = query.ToList();
         }
+
         public string Drafting()
         {
             if(overdraft.IsOn)
