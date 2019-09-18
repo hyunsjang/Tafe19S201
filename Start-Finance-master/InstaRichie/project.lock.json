@@ -324,6 +324,18 @@
             "assetType": "native",
             "rid": "osx-x64"
           },
+          "runtimes/win10-arm/nativeassets/uap10.0/sqlite3.dll": {
+            "assetType": "native",
+            "rid": "win10-arm"
+          },
+          "runtimes/win10-x64/nativeassets/uap10.0/sqlite3.dll": {
+            "assetType": "native",
+            "rid": "win10-x64"
+          },
+          "runtimes/win10-x86/nativeassets/uap10.0/sqlite3.dll": {
+            "assetType": "native",
+            "rid": "win10-x86"
+          },
           "runtimes/win7-x64/native/sqlite3.dll": {
             "assetType": "native",
             "rid": "win7-x64"
@@ -2283,6 +2295,9 @@
         },
         "runtime": {
           "lib/netstandard1.0/_._": {}
+        },
+        "native": {
+          "runtimes/win10-arm/nativeassets/uap10.0/sqlite3.dll": {}
         }
       },
       "SQLite.Net-PCL/3.1.1": {
@@ -4077,6 +4092,9 @@
         },
         "runtime": {
           "lib/netstandard1.0/_._": {}
+        },
+        "native": {
+          "runtimes/win10-arm/nativeassets/uap10.0/sqlite3.dll": {}
         }
       },
       "SQLite.Net-PCL/3.1.1": {
@@ -5883,7 +5901,7 @@
           "lib/netstandard1.0/_._": {}
         },
         "native": {
-          "runtimes/win7-x64/native/sqlite3.dll": {}
+          "runtimes/win10-x64/nativeassets/uap10.0/sqlite3.dll": {}
         }
       },
       "SQLite.Net-PCL/3.1.1": {
@@ -7680,7 +7698,7 @@
           "lib/netstandard1.0/_._": {}
         },
         "native": {
-          "runtimes/win7-x64/native/sqlite3.dll": {}
+          "runtimes/win10-x64/nativeassets/uap10.0/sqlite3.dll": {}
         }
       },
       "SQLite.Net-PCL/3.1.1": {
@@ -9487,7 +9505,7 @@
           "lib/netstandard1.0/_._": {}
         },
         "native": {
-          "runtimes/win7-x86/native/sqlite3.dll": {}
+          "runtimes/win10-x86/nativeassets/uap10.0/sqlite3.dll": {}
         }
       },
       "SQLite.Net-PCL/3.1.1": {
@@ -11284,7 +11302,7 @@
           "lib/netstandard1.0/_._": {}
         },
         "native": {
-          "runtimes/win7-x86/native/sqlite3.dll": {}
+          "runtimes/win10-x86/nativeassets/uap10.0/sqlite3.dll": {}
         }
       },
       "SQLite.Net-PCL/3.1.1": {
@@ -16166,5 +16184,7 @@
       "sqlite >= 3.13.0"
     ],
     "UAP,Version=v10.0": []
-  }
+  },
+  "tools": {},
+  "projectFileToolGroups": {}
 }
