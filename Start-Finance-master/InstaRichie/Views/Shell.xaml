@@ -26,6 +26,18 @@
                 </StackPanel>
             </Controls:HamburgerButtonInfo>
             
+            <!--  ShoppingList button  -->
+            <Controls:HamburgerButtonInfo ClearHistory="True" PageType="views:ShoppingListInfo" 
+                                          AutomationProperties.Name="Jerry"
+                                          >
+                <StackPanel Orientation="Horizontal">
+                    <SymbolIcon Width="48" Height="48"
+                		Symbol="Emoji" />
+                    <TextBlock Margin="12,0,0,0" VerticalAlignment="Center"
+                               Text="Shopping List" />
+                </StackPanel>
+            </Controls:HamburgerButtonInfo>
+
             <!--  Transaction List button  -->
             <Controls:HamburgerButtonInfo ClearHistory="True" PageType="views:TransactionListPage" 
                                           AutomationProperties.Name="Jerry"
