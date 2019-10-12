@@ -1,0 +1,125 @@
+﻿<Page
+    x:Class="StartFinance.Views.ContactDetail"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:StartFinance.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:Template10.Controls"
+        xmlns:vm="using:StartFinance.ViewModels"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <DataTemplate x:Key="TransListView">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"></ColumnDefinition>
+                    <ColumnDefinition Width="150"></ColumnDefinition>
+                    <ColumnDefinition Width="150"></ColumnDefinition>
+                    <ColumnDefinition Width="200"></ColumnDefinition>
+                    <ColumnDefinition Width="100"></ColumnDefinition>
+                    <ColumnDefinition Width="300"></ColumnDefinition>
+                    <ColumnDefinition Width="300"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="0" Text="{Binding ContactID}" Padding="0,0,15,0"/>
+                <TextBlock Grid.Column="1" Text="{Binding FirstName}" Padding="0,0,15,0"/>
+                <TextBlock Grid.Column="2" Text="{Binding LastName}" Padding="0,0,15,0"/>
+                <TextBlock Grid.Column="3" Text="{Binding CompanyName}" Padding="0,0,15,0"/>
+                <TextBlock Grid.Column="4" Text="{Binding MobilePhone}" Padding="0,0,15,0"/>
+
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
+
+    <Page.DataContext>
+        <vm:MainPageViewModel x:Name="ViewModel" />
+    </Page.DataContext>
+
+    <RelativePanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="AdaptiveVisualStateGroup">
+                <VisualState x:Name="VisualStateNarrow">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="{StaticResource NarrowMinWidth}" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <!--  TODO: change properties for narrow view  -->
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="VisualStateNormal">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="{StaticResource NormalMinWidth}" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <!--  TODO: change properties for normal view  -->
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="VisualStateWide">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="{StaticResource WideMinWidth}" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <!--  TODO: change properties for wide view  -->
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+        <controls:PageHeader x:Name="pageHeader" RelativePanel.AlignLeftWithPanel="True"
+			RelativePanel.AlignRightWithPanel="True"
+			RelativePanel.AlignTopWithPanel="True" Text="Add/Remove Contact Info">
+
+            <!--  secondary commands  -->
+            <controls:PageHeader.SecondaryCommands>
+                <AppBarButton Click="{x:Bind ViewModel.GotoSettings}" Label="Settings" />
+                <AppBarButton Click="{x:Bind ViewModel.GotoPrivacy}" Label="Privacy" />
+                <AppBarButton Click="{x:Bind ViewModel.GotoAbout}" Label="About" />
+            </controls:PageHeader.SecondaryCommands>
+        </controls:PageHeader>
+
+        <controls:PageHeader x:Name="pageFooter" RelativePanel.AlignLeftWithPanel="True"
+			RelativePanel.AlignRightWithPanel="True"
+			RelativePanel.AlignBottomWithPanel="True">
+
+            <!--  secondary commands  -->
+            <controls:PageHeader.PrimaryCommands>
+                <AppBarButton Icon="Add" Label="Add Contact Info" Click="AppBarButton_Click" />
+                <AppBarButton Icon="Delete" Label="Delete Contact Info" Click="DeleteItem_Click" />
+                <AppBarButton Icon="PostUpdate" Label="Update" Click="UpdateItem_Click"/>
+                <AppBarButton Icon="Clear" Label="Clear" Click="Clear_Click"/>
+            </controls:PageHeader.PrimaryCommands>
+        </controls:PageHeader>
+
+
+        <Pivot>
+            <RelativePanel.Below>pageHeader</RelativePanel.Below>
+            <RelativePanel.Above>pageFooter</RelativePanel.Above>
+            <PivotItem Header="Contact List Info">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="450"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel x:Name="PageStart" Grid.Row="0" VerticalAlignment="Top"
+                        HorizontalAlignment="Stretch"
+                        Orientation="Vertical" Margin="10,5,10,0">
+                        <TextBox x:Name="ContactID" Header="Contact ID" PlaceholderText="0001" TextWrapping="Wrap"/>
+                        <TextBox x:Name="FirstName" Header="First Name" PlaceholderText="David" TextWrapping="Wrap"/>
+                        <TextBox x:Name="LastName" Header="Last Name" PlaceholderText="John" TextWrapping="Wrap"/>
+                        <TextBox x:Name="CompanyName" Header="Company Name" PlaceholderText="Samsung" TextWrapping="Wrap"/>
+                        <TextBox x:Name="MobilePhone" Header="Mobile Phone" PlaceholderText="00123456" TextWrapping="Wrap"/>
+
+
+                    </StackPanel>
+                    <ListView x:Name="TransactionList" Grid.Row="1" ItemTemplate="{StaticResource TransListView}"
+                              HorizontalAlignment="Stretch" VerticalAlignment="Stretch" SelectionChanged="TransactionList_SelectionChanged">
+                        <RelativePanel.Below>PageStart</RelativePanel.Below>
+                    </ListView>
+                </Grid>
+            </PivotItem>
+        </Pivot>
+
+    </RelativePanel>
+</Page>

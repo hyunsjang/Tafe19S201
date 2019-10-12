@@ -106,9 +106,9 @@
     <Compile Include="Models\Assets.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Debt.cs" />
-    <Compile Include="Models\Personal.cs" />
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\ShoppingList.cs" />
+    <Compile Include="Models\Personal.cs" />
     <Compile Include="Models\Transactions.cs" />
     <Compile Include="Models\WishList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -148,11 +148,11 @@
     <Compile Include="Views\Shell.xaml.cs">
       <DependentUpon>Shell.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\ShoppingListInfo.xaml.cs">
-      <DependentUpon>ShoppingListInfo.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\ContactDetail.xaml.cs">
       <DependentUpon>ContactDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ShoppingListInfo.xaml.cs">
+      <DependentUpon>ShoppingListInfo.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Splash.xaml.cs">
       <DependentUpon>Splash.xaml</DependentUpon>
@@ -235,11 +235,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\ShoppingListInfo.xaml">
+    <Page Include="Views\ContactDetail.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\ContactDetail.xaml">
+    <Page Include="Views\ShoppingListInfo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
