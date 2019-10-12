@@ -26,18 +26,12 @@
                 </StackPanel>
             </Controls:HamburgerButtonInfo>
 
-<<<<<<< HEAD
             <!--  PersonInfo button  -->
             <Controls:HamburgerButtonInfo ClearHistory="True" PageType="views:PersonalInfoPage" 
-=======
-            <!--  Appointments button  -->
-            <Controls:HamburgerButtonInfo ClearHistory="True" PageType="views:AppointmentsPage" 
->>>>>>> feat_Appointments
                                           AutomationProperties.Name="Jerry"
                                           >
                 <StackPanel Orientation="Horizontal">
                     <SymbolIcon Width="48" Height="48"
-<<<<<<< HEAD
                 		Symbol="People" />
                     <TextBlock Margin="12,0,0,0" VerticalAlignment="Center"
                                Text="Accounts" />
@@ -65,13 +59,21 @@
                 		Symbol="ContactInfo" />
                     <TextBlock Margin="12,0,0,0" VerticalAlignment="Center"
                                Text="Contact List" />
-=======
-                		Symbol="Memo" />
-                    <TextBlock Margin="12,0,0,0" VerticalAlignment="Center"
-                               Text="Appointments" />
->>>>>>> feat_Appointments
                 </StackPanel>
             </Controls:HamburgerButtonInfo>
+
+            <!--Appointments button-->
+            <Controls:HamburgerButtonInfo ClearHistory="True" PageType="views:AppointmentsPage"
+                                            AutomationProperties.Name="Jerry"
+                                            >
+                <StackPanel Orientation="Horizontal">
+                    <SymbolIcon Width="48" Height="48"
+                		Symbol="Memo" />
+                    <TextBlock Margin="12,0,0,0" VerticalAlignment="Center" 
+                                Text="Appointments" />
+                </StackPanel>
+            </Controls:HamburgerButtonInfo>
+
 
             <!--  Transaction List button  -->
             <Controls:HamburgerButtonInfo ClearHistory="True" PageType="views:TransactionListPage" 
@@ -165,4 +167,4 @@
     </Controls:HamburgerMenu>
 
 </Page>
-
+    
