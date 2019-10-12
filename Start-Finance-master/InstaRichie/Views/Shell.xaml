@@ -50,6 +50,18 @@
                 </StackPanel>
             </Controls:HamburgerButtonInfo>
 
+            <!--  ContactList button  -->
+            <Controls:HamburgerButtonInfo ClearHistory="True" PageType="views:ContactDetail" 
+                                          AutomationProperties.Name="Jerry"
+                                          >
+                <StackPanel Orientation="Horizontal">
+                    <SymbolIcon Width="48" Height="48"
+                		Symbol="ContactInfo" />
+                    <TextBlock Margin="12,0,0,0" VerticalAlignment="Center"
+                               Text="Contact List" />
+                </StackPanel>
+            </Controls:HamburgerButtonInfo>
+
             <!--  Transaction List button  -->
             <Controls:HamburgerButtonInfo ClearHistory="True" PageType="views:TransactionListPage" 
                                           AutomationProperties.Name="Jerry"
