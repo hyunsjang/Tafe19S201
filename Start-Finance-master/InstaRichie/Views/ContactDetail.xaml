@@ -96,7 +96,7 @@
         <Pivot>
             <RelativePanel.Below>pageHeader</RelativePanel.Below>
             <RelativePanel.Above>pageFooter</RelativePanel.Above>
-            <PivotItem Header="Shopping List Info">
+            <PivotItem Header="Contact List Info">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="450"/>
