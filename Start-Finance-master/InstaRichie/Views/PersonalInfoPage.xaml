@@ -97,7 +97,7 @@
         <Pivot>
             <RelativePanel.Below>pageHeader</RelativePanel.Below>
             <RelativePanel.Above>pageFooter</RelativePanel.Above>
-            <PivotItem Header="PersonInfo">
+            <PivotItem Header="Person List Info">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="450"/>
