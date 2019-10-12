@@ -11,8 +11,8 @@
       Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
       mc:Ignorable="d">
 
-    <Controls:HamburgerMenu x:Name="MyHamburgerMenu">
-
+    <!--<Controls:HamburgerMenu x:Name="MyHamburgerMenu">-->
+    <Controls:HamburgerMenu x:Name="MyHamburgerMenu" IsOpen="True">
         <Controls:HamburgerMenu.PrimaryButtons>
             <!--  DashBoard button  -->
             <Controls:HamburgerButtonInfo ClearHistory="True" PageType="views:DashBoardPage" 
@@ -25,6 +25,19 @@
                                Text="DashBoard" />
                 </StackPanel>
             </Controls:HamburgerButtonInfo>
+
+            <!--  Appointments button  -->
+            <Controls:HamburgerButtonInfo ClearHistory="True" PageType="views:AppointmentsPage" 
+                                          AutomationProperties.Name="Jerry"
+                                          >
+                <StackPanel Orientation="Horizontal">
+                    <SymbolIcon Width="48" Height="48"
+                		Symbol="Memo" />
+                    <TextBlock Margin="12,0,0,0" VerticalAlignment="Center"
+                               Text="Appointments" />
+                </StackPanel>
+            </Controls:HamburgerButtonInfo>
+
 
             <!--  PersonInfo button  -->
             <Controls:HamburgerButtonInfo ClearHistory="True" PageType="views:PersonalInfoPage" 
