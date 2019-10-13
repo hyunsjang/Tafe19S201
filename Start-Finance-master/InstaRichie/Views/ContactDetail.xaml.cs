@@ -108,8 +108,9 @@ namespace StartFinance.Views
                 // checks if data is null else inserts
                 try
                 {
+
                     string ContactLabel = ((Contact)TransactionList.SelectedItem).ContactID;
-                    var querydel = conn.Query<Contact>("DELETE FROM Contact WHERE ID ='" + ContactLabel + "'");
+                    var querydel = conn.Query<Contact>("DELETE FROM Contact WHERE ContactID ='" + ContactLabel + "'");
                     Results();
                 }
                 catch (NullReferenceException)

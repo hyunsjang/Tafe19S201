@@ -108,8 +108,9 @@ namespace StartFinance.Views
                 // checks if data is null else inserts
                 try
                 {
+
                     string ShoppingLabel = ((ShoppingList)Shopping_List.SelectedItem).ItemID;
-                    var querydel = conn.Query<ShoppingList>("DELETE FROM ShoppingList WHERE ID ='" + ShoppingLabel + "'");
+                    var querydel = conn.Query<ShoppingList>("DELETE FROM ShoppingList WHERE ItemID ='" + ShoppingLabel + "'");
                     Results();
                 }
                 catch (NullReferenceException)
@@ -181,7 +182,7 @@ namespace StartFinance.Views
                 NameOfItem.Text = Shopping.NameOfItem;
                 ShoppingDate.Date = DateTime.Parse(Shopping.ShoppingDate);
                 PriceQuoted.Text = Shopping.PriceQuoted;
-             }
+            }
         }
     }
     
