@@ -113,8 +113,8 @@
 
 
                     </StackPanel>
-                    <ListView x:Name="TransactionList" Grid.Row="1" ItemTemplate="{StaticResource TransListView}"
-                              HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <ListView x:Name="Shopping_List" Grid.Row="1" ItemTemplate="{StaticResource TransListView}"
+                              HorizontalAlignment="Stretch" VerticalAlignment="Stretch" SelectionChanged="ShoppingList_SelectionChanged">
                         <RelativePanel.Below>PageStart</RelativePanel.Below>
                     </ListView>
                 </Grid>
