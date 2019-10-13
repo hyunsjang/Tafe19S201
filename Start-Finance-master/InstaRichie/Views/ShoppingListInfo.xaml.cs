@@ -43,7 +43,7 @@ namespace StartFinance.Views
             // Creating table
             conn.CreateTable<ShoppingList>();
             var query = conn.Table<ShoppingList>();
-            TransactionList.ItemsSource = query.ToList();
+            Shopping_List.ItemsSource = query.ToList();
         }
 
         private async void AppBarButton_Click(object sender, RoutedEventArgs e)
@@ -90,7 +90,7 @@ namespace StartFinance.Views
 
         private async void DeleteItem_Click(object sender, RoutedEventArgs e)
         {
-            MessageDialog ShowConf = new MessageDialog("Deleting this ShoppingInfo will delete all info of this Shopping", "Important");
+            MessageDialog ShowConf = new MessageDialog("Deleting this ShoppingInfo will delete all info of this ShoppingList", "Important");
             ShowConf.Commands.Add(new UICommand("Yes, Delete")
             {
                 Id = 0
@@ -108,8 +108,8 @@ namespace StartFinance.Views
                 // checks if data is null else inserts
                 try
                 {
-                    string ShoppingLabel = ((ShoppingList)TransactionList.SelectedItem).ItemID;
-                    var querydel = conn.Query<ShoppingList>("DELETE FROM Shopping WHERE ID ='" + ShoppingLabel + "'");
+                    string ShoppingLabel = ((ShoppingList)Shopping_List.SelectedItem).ItemID;
+                    var querydel = conn.Query<ShoppingList>("DELETE FROM ShoppingList WHERE ID ='" + ShoppingLabel + "'");
                     Results();
                 }
                 catch (NullReferenceException)
@@ -126,9 +126,10 @@ namespace StartFinance.Views
 
         private async void UpdateItem_Click(object sender, RoutedEventArgs e)
         {
+            Regex reg = new Regex("^[0-9]*$");
             try
             {
-                // checks if Appointment's details are null
+                // checks if Shopping's details are null
                 if (ShopItemID.Text.ToString() == "" || ShopName.Text.ToString() == "" || NameOfItem.Text.ToString() == ""
                     || ShoppingDate.Date.ToString() == "" || PriceQuoted.Text.ToString() == "")
                 {
@@ -168,6 +169,19 @@ namespace StartFinance.Views
             ShoppingDate.Date = DateTime.Parse("01/01/2019");
             PriceQuoted.Text = "";
            
+        }
+
+        private void ShoppingList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var Shopping = Shopping_List.SelectedItem as ShoppingList;
+            if (Shopping != null)
+            {
+                ShopItemID.Text = Shopping.ItemID;
+                ShopName.Text = Shopping.ShopName;
+                NameOfItem.Text = Shopping.NameOfItem;
+                ShoppingDate.Date = DateTime.Parse(Shopping.ShoppingDate);
+                PriceQuoted.Text = Shopping.PriceQuoted;
+             }
         }
     }
     

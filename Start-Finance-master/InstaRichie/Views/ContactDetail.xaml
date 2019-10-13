@@ -86,8 +86,8 @@
             <!--  secondary commands  -->
             <controls:PageHeader.PrimaryCommands>
                 <AppBarButton Icon="Add" Label="Add Contact Info" Click="AppBarButton_Click" />
-                <AppBarButton Icon="Delete" Label="Delete Contact Info" Click="DeleteItem_Click" />
                 <AppBarButton Icon="PostUpdate" Label="Update" Click="UpdateItem_Click"/>
+                <AppBarButton Icon="Delete" Label="Delete Contact Info" Click="DeleteItem_Click"/>
                 <AppBarButton Icon="Clear" Label="Clear" Click="Clear_Click"/>
             </controls:PageHeader.PrimaryCommands>
         </controls:PageHeader>
